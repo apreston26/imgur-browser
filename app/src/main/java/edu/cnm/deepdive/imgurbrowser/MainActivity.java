@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     listViewModel = new ViewModelProvider(this)
         .get(ListViewModel.class);
+    getLifecycle().addObserver(listViewModel);
     listViewModel.getSearchResult().observe(this, new Observer<Search>() {
       @Override
       public void onChanged(Search search) {
