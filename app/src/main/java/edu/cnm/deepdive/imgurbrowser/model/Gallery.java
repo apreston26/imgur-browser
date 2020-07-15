@@ -1,7 +1,9 @@
 package edu.cnm.deepdive.imgurbrowser.model;
 
+import androidx.annotation.NonNull;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import java.util.Arrays;
 
 public class Gallery {
 
@@ -77,6 +79,7 @@ public class Gallery {
 
   public static class Search {
 
+    @Expose
     private Gallery[] data;
 
     public Gallery[] getData() {
@@ -85,6 +88,12 @@ public class Gallery {
 
     public void setData(Gallery[] data) {
       this.data = data;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+      return "SearchResult{" + "data=" + Arrays.toString(getData());
     }
   }
 }

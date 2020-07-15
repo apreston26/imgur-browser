@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/imgur_navigation"
+  app:startDestination="@id/gallerySearchFragment">
+<fragment
+  android:id="@+id/gallerySearchFragment"
+  android:name="edu.cnm.deepdive.imgurbrowser.controller.GallerySearchFragment"
+  android:label="gallery_list"
+  tools:layout="@layout/gallery_list"
+  />
+
+</navigation>
