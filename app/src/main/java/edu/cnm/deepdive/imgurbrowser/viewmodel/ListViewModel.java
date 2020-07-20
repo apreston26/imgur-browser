@@ -41,7 +41,7 @@ public class ListViewModel extends AndroidViewModel implements LifecycleObserver
   public void loadData() {
 
     pending.add(
-        imgurService.getSearchResult(BuildConfig.CLIENT_ID, "suns")
+        imgurService.getSearchResult(BuildConfig.CLIENT_ID, "cars")
             .subscribeOn(Schedulers.io())
             .subscribe(
                 searchResult -> this.searchResult.postValue(searchResult),

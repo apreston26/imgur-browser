@@ -1,6 +1,9 @@
 <resources>
-  <string name="app_name">Imgur Browser</string>
+  <string name="app_name">Imgur Browser2</string>
 
   <!-- TODO: Remove or change this placeholder text -->
   <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="image_title">Image Title</string>
+  <string name="gallery_image">Gallery Image</string>
+  <string name="image_description">Image Description</string>
 </resources>

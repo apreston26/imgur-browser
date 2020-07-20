@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/modal_image_spinner"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:padding="@dimen/half_margin">
+
+  <ImageView
+    android:id="@+id/custom_spinner_image"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    android:scaleType="centerInside"
+    android:adjustViewBounds="true"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/custom_spinner_title"
+    android:layout_margin="@dimen/half_margin"
+    android:contentDescription="@string/gallery_image"
+    />
+
+  <TextView
+    android:id="@+id/custom_spinner_title"
+    style="@style/TitleText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/image_title"
+    app:layout_constraintStart_toEndOf="@id/custom_spinner_image"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_margin="@dimen/half_margin"/>
+
+  <TextView
+    android:id="@+id/custom_spinner_description"
+    style="@style/Description"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/image_description"
+    app:layout_constraintStart_toEndOf="@id/custom_spinner_image"
+    app:layout_constraintTop_toBottomOf="@id/custom_spinner_title"
+    android:layout_margin="@dimen/half_margin"
+    />
+
+  <TextView
+    android:id="@+id/custom_spinner_url"
+    style="@style/Description"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/custom_spinner_description"
+    app:layout_constraintStart_toEndOf="@id/custom_spinner_image"
+    android:layout_margin="@dimen/half_margin"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

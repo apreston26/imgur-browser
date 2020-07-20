@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_width="match_parent"
-  android:layout_height="match_parent"
+  android:layout_height="wrap_content"
+  android:padding="@dimen/basic_margin"
   xmlns:app="http://schemas.android.com/apk/res-auto">
 
   <Spinner
@@ -19,8 +20,10 @@
     android:layout_height="wrap_content"
     app:layout_constraintStart_toEndOf="@id/gallery_search_spinner"
     app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/description"
+    app:layout_constraintVertical_chainStyle="packed"
     android:layout_margin="@dimen/basic_margin"
-    android:layout_marginTop="@dimen/basic_margin"
+    android:layout_marginBottom="@dimen/half_margin"
     android:text="Image Title"
     style="@style/TitleText"
     android:textColor="@android:color/black"/>
@@ -34,6 +37,6 @@
     android:layout_margin="@dimen/basic_margin"
     android:text="Image Description"
     style="@style/Description"
-    android:layout_marginLeft="@dimen/basic_margin"
-    android:layout_marginTop="@dimen/basic_margin"/>
+    android:layout_marginLeft="@dimen/half_margin"
+    android:layout_marginTop="@dimen/half_margin"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
