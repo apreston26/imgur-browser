@@ -3,7 +3,15 @@
 
   <!-- TODO: Remove or change this placeholder text -->
   <string name="hello_blank_fragment">Hello blank fragment</string>
-  <string name="image_title">Image Title</string>
   <string name="gallery_image">Gallery Image</string>
   <string name="image_description">Image Description</string>
+  <string name="image_title">Image Title</string>
+  <string name="image_detail_description">Image Detail Description</string>
+  <string name="image_datetime">Image Datetime</string>
+  <string name="image_url">Image URL</string>
+  <string name="image_id">Image ID</string>
+  <string name="image_type">Image Type</string>
+  <string name="image_height">Image Height</string>
+  <string name="image_views">Image Views</string>
+  <string name="image_bandwidth">Image Bandwidth</string>
 </resources>
