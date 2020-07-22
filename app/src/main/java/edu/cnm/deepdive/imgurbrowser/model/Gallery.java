@@ -4,22 +4,29 @@ import androidx.annotation.NonNull;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import java.util.Arrays;
+import java.util.List;
 
 public class Gallery {
 
   private String id;
+
   @Expose
   private String title;
+
   @Expose
   private String description;
+
   private long datetime;
+
   @SerializedName("images_count")
   @Expose
   private int imagesCount;
+
   @Expose
   private Tag[] tags;
+
   @Expose
-  private Image[] images;
+  private List<Image> images;
 
   public String getId() {
     return id;
@@ -69,31 +76,31 @@ public class Gallery {
     this.tags = tags;
   }
 
-  public Image[] getImages() {
+  public List<Image> getImages() {
     return images;
   }
 
-  public void setImages(Image[] images) {
+  public void setImages(List<Image> images) {
     this.images = images;
   }
 
   public static class Search {
 
     @Expose
-    private Gallery[] data;
+    private List<Gallery> data;
 
-    public Gallery[] getData() {
+    public List<Gallery> getData() {
       return data;
     }
 
-    public void setData(Gallery[] data) {
+    public void setData(List<Gallery> data) {
       this.data = data;
     }
 
     @NonNull
     @Override
     public String toString() {
-      return "SearchResult{" + "data=" + Arrays.toString(getData());
+      return "SearchResult{" + "data=" + data.toString();
     }
   }
 }

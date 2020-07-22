@@ -30,9 +30,9 @@ public class GallerySearchFragment extends Fragment {
   public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
     viewModel = new ViewModelProvider(getActivity()).get(ListViewModel.class);
-    viewModel.getSearchResult().observe(getViewLifecycleOwner(), searchResult -> {
-      if (searchResult != null) {
-        galleryArray.setAdapter(new GalleryListAdapter(getContext(), searchResult.getData()));
+    viewModel.getGalleries().observe(getViewLifecycleOwner(), galleries -> {
+      if (galleries != null) {
+        galleryArray.setAdapter(new GalleryListAdapter(getContext(), galleries));
       }
     });
   }
