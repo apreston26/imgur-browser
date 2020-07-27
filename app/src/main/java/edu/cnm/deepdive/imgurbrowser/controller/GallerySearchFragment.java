@@ -10,10 +10,13 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 import edu.cnm.deepdive.imgurbrowser.R;
+import edu.cnm.deepdive.imgurbrowser.model.Gallery;
+import edu.cnm.deepdive.imgurbrowser.model.Image;
 import edu.cnm.deepdive.imgurbrowser.view.GalleryListAdapter;
+import edu.cnm.deepdive.imgurbrowser.view.GalleryListAdapter.OnItemSelectedHelper;
 import edu.cnm.deepdive.imgurbrowser.viewmodel.ListViewModel;
 
-public class GallerySearchFragment extends Fragment {
+public class GallerySearchFragment extends Fragment implements OnItemSelectedHelper {
 
   private RecyclerView galleryArray;
   private ListViewModel viewModel;
@@ -32,8 +35,14 @@ public class GallerySearchFragment extends Fragment {
     viewModel = new ViewModelProvider(getActivity()).get(ListViewModel.class);
     viewModel.getGalleries().observe(getViewLifecycleOwner(), galleries -> {
       if (galleries != null) {
-        galleryArray.setAdapter(new GalleryListAdapter(getContext(), galleries));
+        galleryArray.setAdapter(new GalleryListAdapter(getContext(), galleries, this));
       }
     });
+  }
+
+  @Override
+  public void onSelected(Gallery gallery, Image image) {
+    ImageDetailDialogFragment fragment = ImageDetailDialogFragment.newInstance(image);
+    fragment.show(getChildFragmentManager(), fragment.getClass().getName());
   }
 }

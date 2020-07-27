@@ -47,12 +47,18 @@ public class GalleryImageAdapter extends ArrayAdapter<Image> {
 
     Image currentItem = getItem(position);
 
-    if (currentItem != null) {
-      Picasso.get().load(currentItem.getUrl()).into(imageView);
-      imageView.setSelected(true);
-      title.setText(currentItem.getTitle());
-      description.setText(currentItem.getDescription());
-      url.setText(currentItem.getUrl());
+    if (currentItem.getUrl() != null) {
+      if (position == 0 ) {
+        Picasso.get().load(R.drawable.gallery).into(imageView);
+      } else {
+        Picasso.get().load(currentItem.getUrl()).into(imageView);
+      }
+      if (currentItem.getTitle() != null) {
+        title.setText(currentItem.getTitle());
+      }
+      if (currentItem.getDescription() != null) {
+        description.setText(currentItem.getDescription());
+      }
     }
 
     return convertView;

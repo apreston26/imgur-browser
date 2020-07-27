@@ -14,4 +14,5 @@
   <string name="image_height">Image Height</string>
   <string name="image_views">Image Views</string>
   <string name="image_bandwidth">Image Bandwidth</string>
+  <string name="close_image_dialog">Close</string>
 </resources>
