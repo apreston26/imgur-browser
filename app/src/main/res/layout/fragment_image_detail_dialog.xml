@@ -11,9 +11,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-
-    <!-- Notice on line 33 that is just a placeholder
-     to link the contentDescription to a textView you have to write some code -->
     <ImageView
       android:id="@+id/image_detail"
       android:layout_width="match_parent"
@@ -24,7 +21,8 @@
       android:src="@drawable/car"
       app:layout_constraintBottom_toTopOf="@id/image_description"
       android:layout_margin="@dimen/half_margin"
-      android:padding="@dimen/half_margin"/>
+      android:padding="@dimen/half_margin"
+      />
 
     <TextView
       android:id="@+id/image_description"
@@ -33,7 +31,9 @@
       android:layout_margin="@dimen/half_margin"
       android:text="@string/image_detail_description"
       app:layout_constraintTop_toBottomOf="@id/image_detail"
-      app:layout_constraintStart_toStartOf="parent"/>
+      app:layout_constraintStart_toStartOf="parent"
+      style="@style/Description"
+      />
 
     <LinearLayout
       android:id="@+id/detail_linear_layout"
@@ -42,79 +42,73 @@
       app:layout_constraintTop_toBottomOf="@id/image_description"
       android:background="@drawable/border"
       android:orientation="vertical"
-      android:padding="15dp">
+      android:padding="15dp"
+      android:layout_margin="@dimen/half_margin">
 
-    <TextView
-      android:id="@+id/image_id"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintEnd_toStartOf="@id/image_description"
-      app:layout_constraintTop_toBottomOf="@id/image_description"
-      android:text="@string/image_id"/>
+      <TextView
+        android:id="@+id/image_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/image_id"
+        style="@style/Image_Attribute"
+        />
 
-    <TextView
-      android:id="@+id/image_type"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/image_url"
-      android:text="@string/image_type"
-      android:layout_margin="@dimen/half_margin"/>
+      <TextView
+        android:id="@+id/image_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/image_type"
+        style="@style/Image_Attribute"
+        />
 
-    <TextView
-      android:id="@+id/image_url"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintStart_toEndOf="@id/image_id"
-      app:layout_constraintTop_toBottomOf="@id/image_description"
-      app:layout_constraintHorizontal_chainStyle="spread_inside"
-      android:text="@string/image_url"/>
+      <TextView
+        android:id="@+id/image_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/image_url"
+        style="@style/Image_Attribute"
+        />
 
-    <TextView
-      android:id="@+id/image_datetime"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/image_id"
-      android:text="@string/image_datetime"
-      android:layout_margin="@dimen/half_margin"/>
+      <TextView
+        android:id="@+id/image_datetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/image_datetime"
+        style="@style/Image_Attribute"
+        />
 
-    <TextView
-      android:id="@+id/image_width"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/image_datetime"
-      app:layout_constraintHorizontal_chainStyle="spread_inside"
-      android:text="Image Width"
-      android:layout_margin="@dimen/half_margin"/>
 
-    <TextView
-      android:id="@+id/image_height"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintTop_toBottomOf="@id/image_type"
-      app:layout_constraintEnd_toEndOf="parent"
-      android:text="@string/image_height"/>
+      <TextView
+        android:id="@+id/image_width"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/image_width"
+        style="@style/Image_Attribute"
+        />
 
-    <TextView
-      android:id="@+id/image_views"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/image_width"
-      app:layout_constraintHorizontal_chainStyle="spread_inside"
-      android:text="@string/image_views"/>
+      <TextView
+        android:id="@+id/image_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/image_height"
+        style="@style/Image_Attribute"
+        />
 
-    <TextView
-      android:id="@+id/image_bandwidth"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      app:layout_constraintTop_toBottomOf="@id/image_height"
-      app:layout_constraintEnd_toEndOf="parent"
-      android:text="@string/image_bandwidth"/>
+      <TextView
+        android:id="@+id/image_views"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/image_views"
+        style="@style/Image_Attribute"
+        />
+
+      <TextView
+        android:id="@+id/image_bandwidth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/image_bandwidth"
+        style="@style/Image_Attribute"
+        />
 
     </LinearLayout>
 
