@@ -1,42 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:orientation="vertical"
   android:layout_width="match_parent"
   android:layout_height="wrap_content"
-  android:padding="@dimen/basic_margin"
-  xmlns:app="http://schemas.android.com/apk/res-auto">
+  android:padding="@dimen/half_margin">
 
   <Spinner
     android:id="@+id/gallery_search_spinner"
-    android:layout_width="200dp"
-    android:layout_height="100dp"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
     android:spinnerMode="dialog"
+    app:layout_constraintHorizontal_weight="1"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"/>
 
   <TextView
-    android:id="@+id/title"
-    android:layout_width="wrap_content"
+    android:id="@+id/gallery_title"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
     app:layout_constraintStart_toEndOf="@id/gallery_search_spinner"
     app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toTopOf="@id/description"
-    app:layout_constraintVertical_chainStyle="packed"
-    android:layout_margin="@dimen/basic_margin"
-    android:layout_marginBottom="@dimen/half_margin"
-    android:text="Image Title"
-    style="@style/TitleText"
-    android:textColor="@android:color/black"/>
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_weight="3"
+    android:text="@string/image_title"
+    style="@style/TitleText"/>
 
   <TextView
-    android:id="@+id/description"
-    android:layout_width="wrap_content"
+    android:id="@+id/gallery_description"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
-    app:layout_constraintStart_toEndOf="@id/gallery_search_spinner"
-    app:layout_constraintTop_toBottomOf="@id/title"
+    app:layout_constraintStart_toStartOf="@id/gallery_title"
+    app:layout_constraintTop_toBottomOf="@id/gallery_title"
+    app:layout_constraintEnd_toEndOf="@id/gallery_title"
     android:layout_margin="@dimen/basic_margin"
-    android:text="Image Description"
-    style="@style/Description"
-    android:layout_marginLeft="@dimen/half_margin"
-    android:layout_marginTop="@dimen/half_margin"/>
+    android:text="@string/image_description"
+    style="@style/Description"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

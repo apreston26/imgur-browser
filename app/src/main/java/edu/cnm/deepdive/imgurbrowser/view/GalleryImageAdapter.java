@@ -24,29 +24,33 @@ public class GalleryImageAdapter extends ArrayAdapter<Image> {
   @NonNull
   @Override
   public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-    return initView(position, convertView, parent);
+    return (convertView != null && convertView.findViewById(R.id.spinner_placeholder) != null)
+        ? convertView : LayoutInflater.from(getContext()).inflate(R.layout.item_gallery_image_placeholder, parent, false);
   }
 
   @Override
   public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-    return initView(position, convertView, parent);
+    if(position == 0) {
+      return (convertView != null && convertView.findViewById(R.id.spinner_unselectable) != null)
+          ? convertView : LayoutInflater.from(getContext()).inflate(
+              R.layout.item_gallery_image_unselectable, parent, false);
+    } else {
+      return initView(position, convertView, parent);
+    }
   }
 
   private View initView(int position, View convertView, ViewGroup parent) {
 
-    if (convertView == null) {
+    if (convertView == null || convertView.findViewById(R.id.modal_image_spinner) == null) {
       convertView = LayoutInflater.from(getContext()).inflate(
-          R.layout.custom_gallery_search_spinner_item, parent, false
+          R.layout.item_gallery_image, parent, false
       );
     }
 
-    ImageView imageView = convertView.findViewById(R.id.custom_spinner_image);
-    TextView title = convertView.findViewById(R.id.custom_spinner_description);
-    TextView description = convertView.findViewById(R.id.custom_spinner_description);
-    TextView url = convertView.findViewById(R.id.custom_spinner_url);
-
+    ImageView imageView = convertView.findViewById(R.id.image_gallery_search);
+    TextView title = convertView.findViewById(R.id.custom_description);
+    TextView description = convertView.findViewById(R.id.custom_description);
     Image currentItem = getItem(position);
-
     if (currentItem.getUrl() != null) {
       if (position == 0 ) {
         Picasso.get().load(R.drawable.gallery).into(imageView);
@@ -55,9 +59,13 @@ public class GalleryImageAdapter extends ArrayAdapter<Image> {
       }
       if (currentItem.getTitle() != null) {
         title.setText(currentItem.getTitle());
+      } else {
+        title.setText("Untitled");
       }
       if (currentItem.getDescription() != null) {
         description.setText(currentItem.getDescription());
+      } else {
+        description.setText("No Description");
       }
     }
 
